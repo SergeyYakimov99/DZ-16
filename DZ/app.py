@@ -11,6 +11,7 @@ app.config['JSON_AS_ASCII'] = False
 
 db = SQLAlchemy(app)
 
+
 @app.route("/users", methods=['GET', 'POST'])
 def get_users():
     if request.method == 'GET':
@@ -157,6 +158,7 @@ def get_offers():
         db.session.commit()
         db.session.close()
         return "Предложение создано в БД"
+
 
 @app.route("/offers/<int:sid>", methods=['GET', 'PUT', 'DELETE'])
 def get_offer_id(sid):
